@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  background: url("https://img.freepik.com/premium-vector/love-heart-pattern-background-design_746906-510.jpg") repeat center center fixed;
+  background-size: cover;
+  font-family: 'EB Garamond', serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.letter {
+  background: #fdf6e3;
+  color: #3b2f2f;
+  font-size: 20px;
+  line-height: 1.8;
+  padding: 40px;
+  max-width: 700px;
+  border: 2px solid #947f56;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.letter h1 {
+  text-align: center;
+  font-size: 34px;
+  color: #8a5e52;
+  margin-bottom: 20px;
+}
+
+.letterName {
+  font-size: 26px;
+}
+
+/* Overlay for blur */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  z-index: 99;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fdf6e3;
+  padding: 90px 120px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 100;
+  display: none;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup h2 {
+  margin-top: 0;
+  font-size: 30px;
+  color: #5a3e36;
+}
+
+.popup p {
+  font-size: 22px;
+}
+
+.popup button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #bea26a;
+  color: #000000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.popup button:hover {
+  background: #a89265;
+}
+/* Add this below existing .popup styles */
+
+/* Button group for Yes/No */
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+#continueBtn{
+  padding: 8px 12px;
+  color: #ffffff;
+  background-color: #947f56;
+  font-size: 16px;
+  border-radius: 8px;
+}
+#noBtn {
+  position: relative; /* Default position next to Yes */
+}
+
+/* ------------------- */
+/* RESPONSIVE DESIGN   */
+/* ------------------- */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .letter {
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  .letter h1 {
+    font-size: 26px;
+  }
+
+  .letterName {
+    font-size: 22px;
+  }
+
+  .popup {
+    padding: 40px 20px;
+    max-width: 90%;
+  }
+
+  .popup h2 {
+    font-size: 22px;
+  }
+
+  .popup p {
+    font-size: 18px;
+  }
+
+  .popup button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .letter h1 {
+    font-size: 22px;
+  }
+
+  .letterName {
+    font-size: 18px;
+  }
+
+  .popup {
+    padding: 30px 15px;
+  }
+
+  .popup h2 {
+    font-size: 20px;
+  }
+
+  .popup p {
+    font-size: 16px;
+  }
+
+  .popup button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

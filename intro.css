@@ -1,0 +1,161 @@
+:root {
+  --pink: #ffeef2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background: var(--pink);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Envelope full screen */
+.envelope-img {
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.envelope-img:active {
+  transform: scale(0.97);
+}
+
+/* Hidden message */
+.message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #333;
+  background: rgba(248, 188, 228, 0.438);
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hint at bottom */
+.hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ====== RESPONSIVENESS ====== */
+@media (max-width: 768px) {
+  .message {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+  .hint {
+    font-size: 0.8rem;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+  .hint {
+    font-size: 0.7rem;
+    bottom: 12px;
+  }
+}
+/* Modal backdrop */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 400ms ease, visibility 0s linear 400ms;
+  z-index: 100;
+}
+
+/* show state */
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 400ms ease;
+}
+
+/* Modal box */
+.modal-content {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  animation: popIn 500ms ease;
+}
+
+.modal-content h1 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: #ff4d8d;
+}
+
+.modal-content p {
+  margin: 0 0 20px;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.modal-content button {
+  background: #ff4d8d;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.modal-content button:hover {
+  background: #e13d78;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
