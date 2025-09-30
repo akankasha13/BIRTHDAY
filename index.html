@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Countdown</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envelope Surprise</title>
+  <link rel="stylesheet" href="intro.css">
 </head>
 <body>
-    <div class="countdown-container">
-        <div class="countdown-block">
-            <div class="time" id="days">00</div>
-            <div class="label">Days</div>
-        </div>
-        <div class="separator">:</div>
-        <div class="countdown-block">
-            <div class="time" id="hours">00</div>
-            <div class="label">Hours</div>
-        </div>
-        <div class="separator">:</div>
-        <div class="countdown-block">
-            <div class="time" id="minutes">00</div>
-            <div class="label">Minutes</div>
-        </div>
-        <div class="separator">:</div>
-        <div class="countdown-block">
-            <div class="time" id="seconds">00</div>
-            <div class="label">Seconds</div>
-        </div>
+  <div class="stage">
+    <!-- Envelope image -->
+    <img src="https://png.pngtree.com/png-vector/20250429/ourmid/pngtree-romantic-pink-envelope-with-red-heart-for-love-letter-png-image_16009989.png" id="envelope" class="envelope-img" alt="Envelope">
+
+    <!-- Hidden message (inline text on top of envelope) -->
+    <div id="message" class="message">
+      Hello Vidushey, Kiska bday aarha haii?!
     </div>
 
-    <div id="confetti"></div>
-    <div id="message"></div>
+    <!-- Hint -->
+    <div class="hint">Tap the envelope to open</div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h1>Bulli ka bday!!</h1>
+      <button id="nextBtn">Lessgo</button>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="intro.js" defer></script>
 </body>
 </html>

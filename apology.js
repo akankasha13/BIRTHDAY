@@ -50,5 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
   noBtn.addEventListener("touchstart", moveNoButton);
 });
 yesBtn.addEventListener("click", () => {
-  window.location.href = "index.html";
+  window.location.href = "main.html";
 });
